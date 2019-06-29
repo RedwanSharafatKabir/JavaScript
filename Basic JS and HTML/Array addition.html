@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var sum = 0, i, n = prompt("Array size: "), ar = [];
+        for (i = 0; i < n; i++) {
+            ar[i] = prompt("Elements: ");
+        }
+
+        ar = ar.map(Number);
+
+        for (i = 0; i < ar.length; i++) {
+            sum = (sum + ar[i]);
+        }
+
+        document.write("Result: " + sum);
+    </script>
+    <style>
+        body {
+            background: #ddd none repeat scroll 0 0;
+            color: #d02a13;
+            font-family: 'Calibri MT Extra';
+            font-size: 30px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>

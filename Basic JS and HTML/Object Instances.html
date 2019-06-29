@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var obj1 = {};
+        var ar = [171,15,8737];
+        document.write(obj1.constructor);
+        document.write("<br>" + ar.constructor);
+
+        // hasOwnProperty() চেক করে তার ভিতরের নামের কোন property অবজেক্ট এ আছে কিনা
+        // এখানে constructor হল Object এর prototype, not property
+        document.write("<br>" + obj1.hasOwnProperty('constructor'));
+
+        obj1.myproperty = "It's me.";
+        // এখানে myproperty হল Object এর property
+        document.write("<br>" + obj1.hasOwnProperty('myproperty'));
+
+        // propertyIsEnumerable() মেথড চেক করে - for লুপ চালালে property ইনক্লুড হয় কিনা তা রিটার্ন করে
+        document.write("<br>" + obj1.propertyIsEnumerable('constructor'));
+        document.write("<br>" + obj1.propertyIsEnumerable('myproperty'));
+
+        // Object কে String এ কনভার্ট করবে
+        document.write("<br>" + obj1.toString());
+        // Array কে String এ কনভার্ট করবে
+        document.write("<br>" + ar.toString());
+
+        // Object কে Array তে কনভার্ট করবে call([]) এর মাধ্যমে 
+        document.write("<br>" + Object.prototype.toString.call([]));
+    </script>
+</head>
+<body>
+</body>
+</html>

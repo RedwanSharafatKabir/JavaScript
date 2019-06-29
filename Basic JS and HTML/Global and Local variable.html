@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript</title>
+    <style>
+        body {
+            background: #ddd none repeat scroll 0 0;
+            color: #d02a13;
+            font-family: Algerian;
+            font-size: 20px;
+            margin: 100px auto;
+            text-align: center;
+            width: 900px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Fundamental Course</h1>
+    <p>It is easy to learn & easy to code.</p>
+    <script>
+        //let word1 = "Global";
+        function variable() {
+            //word1 = word1 + " variable";
+            //var word1 = "Local variable";
+
+            // if the variable is not declared then it is automaticly a global variable
+            word1 = "Global variable"
+            document.write(`${word1} <br><br>`);
+        }
+
+        variable();
+        document.write(word1);
+    </script>
+</body>
+</html>

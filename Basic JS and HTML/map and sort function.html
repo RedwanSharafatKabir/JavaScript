@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Class - 04</title>
+</head>
+<body>
+    <div align="center">
+        <h1>JavaScript Class - 04</h1>
+    </div>
+
+    <script>
+
+        let users = [
+            {name: "Chika", age: 12, alive: true},
+            {name: "Kabila", age: 60, alive: false},
+            {name: "Discount", age: 33, alive: true},
+            {name: "Sharafat", age: 36, alive: false},
+            {name: "Ifty vai", age: 47, alive: false},
+            {name: "Shawon vai", age: 55, alive: true},
+            {name: "Fuad Votka", age: 23, alive: false},
+            {name: "Devasish vai", age: 32, alive: true},
+            {name: "Rajdiv vai", age: 44, alive: false},
+            {name: "Chor", age: 29, alive: true},
+        ]
+
+        //function UserInfo(user){
+        //    return `<br><br>  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        //            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        //            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        //            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        //            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        //            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        //            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        //            ${user.name} is ${user.age} years old`
+        //}
+        //let infos = users.map(UserInfo)
+        //document.write(infos)
+
+
+        //function Sorting(a,b){
+        //    return a.age > b.age ? 1  : -1
+        //}
+        //let sorted = users.sort(Sorting)
+        //console.log(sorted);
+
+        //ES5 addition
+        //let numbers = [2,5,63,3,6,8,7,5,9,89]
+        //function SUM(accumulator, number){
+        //    return accumulator = accumulator + number
+        //}
+        //let sum = numbers.reduce(SUM)
+        //document.write(sum);
+
+        //ES6 addition
+        //let smartsum = numbers.reduce((kabila,value) => kabila+=value)
+        //document.write("<br>" + smartsum);
+
+        function isAlive(user){
+            return user.alive
+        }
+        let isEveryoneAlive = users.every(isAlive)
+        document.write(isEveryoneAlive);
+
+    </script>
+</body>
+</html>

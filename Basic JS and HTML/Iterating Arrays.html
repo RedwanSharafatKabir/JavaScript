@@ -1,0 +1,64 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var ar = [], i, n;
+        var ar2 = [1, 'Hi! ', 'Bye', 2, 93, 4, 78];
+        var ar3 = [5,4,3,2,1];
+
+        n = prompt("Enter array size: ");
+
+        for (i = 0; i < n; i++) {
+            ar[i] = prompt("Enter string elements: ");
+        }
+
+        !function () {
+            // forEach লুপ এ প্রথম ভ্যালু হল অ্যারে এলিমেন্ট এবং দ্বিতীয় ভ্যালু হল অ্যারে ইনডেক্স
+            ar.forEach(function (value, index) {
+                document.write('Value is: "' + value + '" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Index number is: ' + index + "<br>");
+            });
+
+            // every মেথড চেক করে সবগুলো ভ্যালু স্ট্রিং / ইন্টিজার / দশমিক এবং রিটার্ন করে ট্রু / ফলস
+            document.write(ar.every(function (value) {
+                return typeof value !== 'string';
+            }));
+
+            // filter মেথড অ্যারে থেকে সিলেকটেড নাম্বার ডিলিট করে বাকি অংশ শো করে
+            document.write("<br>" + ar2.filter(function (value) {
+                return typeof value !== 'number';
+            }));
+            document.write("<br>" + ar2.filter(function (value) {
+                return typeof value !== 'string';
+            }));
+
+            //  map মেথড স্ট্রিং কে আপার কেইস বা লোআর কেইস এ রুপান্তর করে
+            document.write("<br>" + ar.map(function (value) {
+                return value.toUpperCase();
+            }));
+            document.write("<br>" + ar.map(function (value) {
+                return value.toLowerCase();
+            }));
+
+            // reduce() এর ভিতর 4 টি প্যারামিটার থাকতে পারে - প্রথম টি most previous ভ্যালু, দ্বিতীয় টি Initial ভ্যালু
+            document.write("<br>" + ar3.reduce(function (total, value) {
+                return total+=value;    // এখানে total+=value সবগুলো এলিমেন্ট এর যোগফল প্রিন্ট করবে
+            },100));
+
+        }();
+
+    </script>
+
+    <style>
+        body {
+            background: #ddd none repeat scroll 0 0;
+            color: #d02a13;
+            font-family: 'Calibri MT Extra';
+            font-size: 30px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>

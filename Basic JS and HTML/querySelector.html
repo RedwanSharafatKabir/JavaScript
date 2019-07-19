@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>mastering js class - 05</title>
+</head>
+<body>
+    
+    <h1 id="header1"> Hello world !</h1>
+    <!--<h2 class="header2 header3">Good bye world.</h2>-->
+    <!--<h3 class="header2">I'm sad.</h3>-->
+    <!--<p class="header3">Don's disturb me.</p>-->
+
+    <script>
+        //let node1 = document.write(header1);
+        //let node2 = document.write(header2);
+        //let node3 = document.write(header3);
+        //let node4 = document.write(header3);
+
+        let id1 = document.querySelector(header1);
+        //let class3 = document.querySelector(".header2");
+
+        let node5 = id1.innerText;
+        console.log(node5) // Hello world !
+        id1.innerText = "I'm broken."
+    </script>
+</body>
+</html>

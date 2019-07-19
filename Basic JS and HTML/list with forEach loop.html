@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>mastering js class - 05</title>
+</head>
+<body>
+    <ul id="content">
+        <li>Hello world !</li>
+        <li>Good bye world.</li>
+    </ul>
+
+    <script>
+        let list = document.querySelector("#content");
+        list.insertAdjacentHTML("beforeend", "<li>I'm sad</li>");
+        list.insertAdjacentHTML("beforeend", "<li>I'm broken</li><br><br>");
+
+        let tasks = [
+            "Shukahash",
+            "Discount",
+            "Kabila"
+        ]
+
+        tasks.forEach(function(task){
+            list.insertAdjacentHTML("beforeend", `<li>${task}</li>`)
+        })
+    </script>
+</body>
+</html>

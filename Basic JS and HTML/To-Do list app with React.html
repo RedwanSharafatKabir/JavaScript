@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS To-Do</title>
+
+    <!--<link rel="stylesheet" href="style.css">-->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Lato";
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .App {
+            max-width: 960px;
+            margin: 50px auto;
+        }
+
+        .task-list-outter {
+            margin: 48px 0;
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-left img {
+            height: 45px;
+        }
+
+        .header-right img {
+            height: 45px;
+        }
+
+        .list-title {
+            color: #2b2b2b;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+        }
+
+        hr {
+            height: 0;
+            margin: 10px 0 20px 0;
+            border: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .progress {
+            color: #9a9a9a;
+            font-size: .9rem;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .item-checker {
+            margin-right: 8px;
+            width: 40px;
+        }
+
+        .task-item h4 {
+            font-size: 1rem;
+            color: #3c3c3c;
+            margin: 0 0 4px;
+        }
+
+        .task-item .item-deadline {
+            color: #7a7a7a;
+            font-size: .9rem;
+        }
+
+        .list-header {
+            display: flex;
+            margin-bottom: 36px;
+        }
+
+        .list-icon {
+            width: 48px;
+        }
+
+        .list-icon img {
+            width: 30px;
+        }
+
+        .list-data {
+            flex: 1;
+        }
+
+        h1 {
+            color: #2b2b2b;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+
+        .form-group {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 38px;
+            padding: 4px 12px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #e2e5ec;
+            border-radius: 0;
+            outline: none;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            margin-top: 4px;
+        }
+
+        .form-control:disabled, .form-control[readonly] {
+            background-color: #f7f8fa;
+            opacity: 1;
+        }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border: 1px solid rgba(0, 135, 134, 0.4);
+            outline: 0;
+            box-shadow: none;
+        }
+
+        .button {
+            border: none;
+            background-color: #018786;
+            color: #fff;
+            outline: none;
+            padding: 10px 24px;
+            font-weight: 600;
+            box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .error {
+            background-color: #ff5252;
+            color: #fff;
+            padding: 16px 24px;
+            margin-bottom: 20px;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        a.item-remove {
+            margin-left: auto;
+            font-size: 12px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: -.5px;
+            background: #ff5252;
+            padding: 2px 8px 3px;
+            border-radius: 2px;
+        }
+
+        .NoTodo {
+            padding: 15px 20px;
+            background-color: #efefef;
+            color: #2b2b2b;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="App">
+
+    <!-- Header Layout Begin -->
+    <header class="app-header">
+        <div class="header-left">
+            <img src="media/cpc.png" class="CPC Logo" alt="logo">
+        </div>
+
+        <div class="header-center">
+            <h1>JS Todo</h1>
+        </div>
+
+        <div class="header-right">
+            <img src="media/diu.png" class="DIU Logo" alt="logo">
+        </div>
+    </header>
+    <div class="task-list-outter">
+        <div class="list-header">
+            <div class="list-icon">
+                <img alt="Task" src="media/todo.svg">
+            </div>
+
+            <div class="list-data">
+                <h3 class="list-title">My Tasks:</h3>
+            </div>
+        </div>
+
+        <div class="task-list">
+
+             <!--Task Item Sample Start-->
+            <div class="task-item">
+                <div class="item-checker">
+                    <input class="ToggleCheck" type="checkbox">
+                </div>
+
+                <div class="item-details">
+                    <h4>Task Title</h4>
+                    <div class="item-deadline">25 December 2019</div>
+                </div>
+
+                <a href="#" class="item-remove">Remove</a>
+            </div>
+             Task Item Sample End  
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <hr>
+
+        <!-- Task Add Form Start -->
+        <form class="inputForm" action="#">
+            <div class="form-group">
+                <label>Task Title</label>
+                <input id="input-title" type="text" placeholder="Example: Finish Homework" class="form-control" value="">
+            </div>
+
+            <div class="form-group">
+                <label>Deadline</label>
+                <input id="input-date" type="text" placeholder="Example: 25 October 2019" class="form-control" value="">
+            </div>
+
+            <button class="button">Save Task</button>
+        </form>
+        <!-- Task Add Form End -->
+
+    </footer>
+</div>
+
+    <script>
+        let tasks = [
+            {
+                id: 1,
+                title: "Mastering JS class",
+                date: "19 July 2019 at 3:00 PM",
+                completed: true
+            },
+            {
+                id: 2,
+                title: "Go to DT5 lane",
+                date: "19 July 2019 at 6:05 PM",
+                completed: false
+            },
+
+            {
+                id: 3,
+                title: "Eat nasta",
+                date: "19 July 2019 at 6:15 PM",
+                completed: false
+            }
+        ]
+        function Render() {
+            let dom = document.querySelector(".task-list");
+            dom.innerHTML = "";
+            
+            tasks.forEach(function(task){
+                dom.insertAdjacentHTML("beforeend", `<div class="task-item"> ${task.title} (${task.date})</div>`);
+            })
+        }
+        Render();
+        function ToggleCheck(){
+
+        }
+        function Add(){
+
+        }
+        function Delete(){
+
+        }
+        Render();
+
+        let form = document.querySelector(".inputForm");
+        let titleInput = document.querySelector("#input-title");
+        let dateInput = document.querySelector("#input-date");
+
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+            tasks.push({
+                id: 1,
+                title: titleInput.value,
+                date: dateInput.value,
+                completed: false
+            })
+            Render();
+        })
+    </script>
+
+</body>
+</html>
